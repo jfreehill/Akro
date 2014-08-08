@@ -1,6 +1,32 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 // endbower
+@import "fontello";
+
+@font-face {
+    font-family: 'Asap-Regular';
+    src: url('../fonts/asap-regular-webfont.eot');
+    src: url('../fonts/asap-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/asap-regular-webfont.woff') format('woff'),
+         url('../fonts/asap-regular-webfont.ttf') format('truetype'),
+         url('../fonts/asap-regular-webfont.svg#asapregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Asap-Bold';
+    src: url('../fonts/asap-bold-webfont.eot');
+    src: url('../fonts/asap-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/asap-bold-webfont.woff') format('woff'),
+         url('../fonts/asap-bold-webfont.ttf') format('truetype'),
+         url('../fonts/asap-bold-webfont.svg#asapbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
 
 .browsehappy {
   margin: 0.2em 0;
@@ -9,10 +35,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
+html,
+body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-color: #2b2828;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -25,47 +55,124 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-
   /* Make the masthead heading the same height as the navigation */
-  h3 {
+}
+
+button {
+    border: none;
+    font-family: 'Asap-Bold';
+    &:focus {
+        outline: none;
+    }
+}
+
+h1,
+h2 {
+    color: #fff;
     margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
+    margin-bottom: 0.5rem;
+    font-family: 'Asap-Regular';
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+h1 {
+    font-family: 'Asap-Bold';
+    text-align: center;
+}
+h2 {
+    font-size: 20px;
+    color: #d2babb;
+    padding-left: 1rem;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+header {
+    padding-top: 20px;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+.container {
+    position: relative;
+    height: 100%;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
+.display {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-top: 1px solid #191717;
+    border-bottom: 1px solid #191717;
 }
+
+.display-text {
+    background-color: #433c3d;
+    border: none;
+    color: #fff;
+    display: block;
+    float: left;
+    font-family: 'Asap-Bold';
+    font-size: 22px;
+    height: 4rem;
+    text-align: center;
+    width: 80%;
+}
+.display-refresh {
+    background-color: #4797b7;
+    color: #fff;
+    display: block;
+    height: 4rem;
+    font-size: 20px;
+    width: 20%;
+    box-shadow: inset 5px 0 10px rgba(0,0,0,.1);
+}
+.display-button-bar {
+    clear: both;
+    height: 4rem;
+    width: 100%;
+
+    button {
+        display: block;
+        float: left;
+        font-size: 20px;
+        height: 100%;
+        width: 20%;
+        box-shadow: inset 5px 0 10px rgba(0,0,0,.1);
+
+        &:first-child {
+            background-color: #f6f230;
+        }
+        &:nth-child(2) {
+            background-color: #f2d02c;
+        }
+        &:nth-child(3) {
+            background-color: #eda829;
+        }
+        &:nth-child(4) {
+            background-color: #e78124;
+        }
+        &:last-child {
+            background-color: #e56621;
+        }
+        &[disabled] {
+            background-color: #ccc;
+        }
+    }
+}
+
+.letters {
+    margin-bottom: 30px;
+
+    .display-text {
+        letter-spacing: 2px;
+    }
+}
+
+.new-round {
+    background-color: #7bc944;
+    color: #222;
+    font-size: 20px;
+    height: 4rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

@@ -3,13 +3,14 @@
   <head>
 
     <meta charset="utf-8">
-    <title></title>
+    <title>Akro</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
-    <link rel="stylesheet" href="bower_components/topcoat/css/topcoat-mobile-dark.css">
+
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -22,42 +23,28 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="topcoat-navigation-bar">
-        <div class="topcoat-navigation-bar__item center full">
-            <h1 class="topcoat-navigation-bar__title">Akro</h1>
-        </div>
-    </div>
-
     <div class="container">
+        <header>
+            <h1>Akro</h1>
+        </header>
         <h2>Category</h2>
-        <div class="display categories row">
-            <input type="text" class="topcoat-text-input" ng-model="category">
-            <button type="button" class="topcoat-icon-button" ng-click="newCategory()">Refresh</button>
+        <div class="display categories">
+            <input type="text" class="display-text" ng-model="category">
+            <button type="button" class="display-refresh icon-arrows-cw" ng-click="newCategory()"></button>
         </div>
         <h2>Letters</h2>
-        <div class="display letters row">
-            <input type="text" class="topcoat-text-input" ng-model="letters">
-            <button type="button" class="topcoat-icon-button" ng-click="newLetters()">Refresh</button>
-            <div class="topcoat-button-bar">
-                <div class="topcoat-button-bar__item">
-                    <button type="button" class="topcoat-button-bar__button" ng-click="letterCount=letterCount-1">-</button>
-                </div>
-                <div class="topcoat-button-bar__item">
-                    <button type="button" class="topcoat-button-bar__button" ng-click="letterCount=3">3</button>
-                </div>
-                <div class="topcoat-button-bar__item">
-                    <button type="button" class="topcoat-button-bar__button" ng-click="letterCount=4">4</button>
-                </div>
-                <div class="topcoat-button-bar__item">
-                    <button type="button" class="topcoat-button-bar__button" ng-click="letterCount=5">5</button>
-                </div>
-                <div class="topcoat-button-bar__item">
-                    <button type="button" class="topcoat-button-bar__button" ng-click="letterCount=letterCount+1">+</button>
-                </div>
-            </div>
-
+        <div class="display letters">
+            <input type="text" class="display-text" ng-model="letters">
+            <button type="button" class="display-refresh icon-arrows-cw" ng-click="newLetters()"></button>
+            <div class="display-button-bar">
+                <button type="button" class="icon-minus" ng-click="letterCount=letterCount-1" ng-disabled="letterCount===1"></button>
+                <button type="button" ng-click="letterCount=3">3</button>
+                <button type="button" ng-click="letterCount=4">4</button>
+                <button type="button" ng-click="letterCount=5">5</button>
+                <button type="button" class="icon-plus" ng-click="letterCount=letterCount+1" ng-disabled="letterCount===8"></button>
+           </div>
         </div>
-        <button type="button" class="topcoat-button--cta" ng-click="newRound()">New!</button>
+        <button class="new-round" type="button" ng-click="newRound()">New Round!</button>
     </div>
 
 
