@@ -9,3 +9,5 @@ A simplified, mobile-focused remake of a 90's classic, Acrophobia.
 4. Point your favorite Internet-connected web surfing program to [http://localhost:9000](http://localhost:9000)
 5. ????
 6. Profit
+
+Yeah I didn't dev any tests, because I wanted to knock it out as fast as possible (and I'm lazy).
