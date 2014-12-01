@@ -61,6 +61,7 @@ body {
 button {
     border: none;
     font-family: 'Asap-Bold';
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     &:focus {
         outline: none;
     }
@@ -77,6 +78,7 @@ h2 {
 h1 {
     font-family: 'Asap-Bold';
     text-align: center;
+    width: 80%;
 }
 h2 {
     font-size: 20px;
@@ -85,7 +87,26 @@ h2 {
 }
 
 header {
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.help {
+    background-color: #191717;
+    color: #e63d4a;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    font-size: 30px;
+    transition: color 0.3s;
+
+    &.open {
+        color: #b21f30;
+        transition: color 0.3s;
+    }
 }
 
 .container {
@@ -94,10 +115,18 @@ header {
 }
 
 .display {
+    background-color: #433c3d;
     width: 100%;
     margin-bottom: 2rem;
     border-top: 1px solid #191717;
     border-bottom: 1px solid #191717;
+
+    p {
+        color: #fff;
+        font-family: 'Asap-Regular';
+        font-size: 16px;
+        padding: 0 1rem;
+    }
 }
 
 .display-text {
@@ -120,7 +149,20 @@ header {
     font-size: 20px;
     width: 20%;
     box-shadow: inset 5px 0 10px rgba(0,0,0,.1);
+    transition: background-color 0.35s;
+
+    &:active {
+        background-color: #4bb4d4;
+        transition: background-color 0s;
+    }
 }
+
+@mixin lightenActive($bg) {
+    &:active {
+        background-color: lighten($bg, 20%);
+    }
+}
+
 .display-button-bar {
     clear: both;
     height: 4rem;
@@ -133,30 +175,43 @@ header {
         height: 100%;
         width: 20%;
         box-shadow: inset 5px 0 10px rgba(0,0,0,.1);
+        transition: background-color 0.35s;
 
         &:first-child {
             background-color: #f6f230;
+            @include lightenActive(#f6f230);
         }
         &:nth-child(2) {
             background-color: #f2d02c;
+            @include lightenActive(#f2d02c);
         }
         &:nth-child(3) {
             background-color: #eda829;
+            @include lightenActive(#eda829);
         }
         &:nth-child(4) {
             background-color: #e78124;
+            @include lightenActive(#e78124);
         }
         &:last-child {
             background-color: #e56621;
+            @include lightenActive(#e56621);
         }
         &[disabled] {
             background-color: #ccc;
+
+            &:active {
+                background-color: #fd686d;
+            }
+        }
+        &:active {
+            transition: background-color 0s;
         }
     }
 }
 
 .letters {
-    margin-bottom: 30px;
+    margin-bottom: 80px;
 
     .display-text {
         letter-spacing: 2px;
@@ -169,15 +224,23 @@ header {
     font-size: 20px;
     height: 4rem;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
+    transition: background-color 0.5s;
+
+    &:active {
+        background-color: #a1f43c;
+        transition: background-color 0s;
+    }
 }
 
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .container {
-    max-width: 730px;
+    max-width: 640px;
+    margin: 0 auto;
   }
 
   /* Remove the padding we set earlier */
