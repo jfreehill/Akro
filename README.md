@@ -10,4 +10,4 @@ A simplified, mobile-focused remake of a 90's classic, Acrophobia.
 5. ????
 6. Profit
 
-Yeah I didn't dev any tests, because I wanted to knock it out as fast as possible (and I'm lazy).
+Yeah I didn't dev any tests, because I wanted to knock it out as fast as possible (and I'm busy/lazy).
